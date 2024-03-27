@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "se_currency_converter_grpc";
+
+package convertCurrency;
+
+service CurrencyConverter {
+  rpc ConvertCurrency (ConvertCurrencyRequest) returns (ConvertCurrencyReply);
+}
+
+message ConvertCurrencyRequest {
+  double amount = 1;
+  string fromCurrency = 2;
+  string toCurrency = 3;
+}
+
+message ConvertCurrencyReply {
+  double convertedAmount = 1;
+}
